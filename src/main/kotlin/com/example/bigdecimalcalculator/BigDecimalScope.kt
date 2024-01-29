@@ -22,26 +22,20 @@ class BigDecimalScope(
 
     var value: BigDecimal = BigDecimal.ZERO
 
-    operator fun Number.plus(other: Number): BigDecimal {
+    operator fun Number.plus(other: Number): BigDecimal =
+        this.toBigDecimal().add(other.toBigDecimal())
 
-        return this.toBigDecimal().add(other.toBigDecimal())
-    }
+    operator fun Number.minus(other: Number): BigDecimal =
+        this.toBigDecimal().subtract(other.toBigDecimal())
 
-    operator fun Number.minus(other: Number): BigDecimal {
-        return this.toBigDecimal().subtract(other.toBigDecimal())
-    }
+    operator fun Number.times(other: Number): BigDecimal =
+        this.toBigDecimal().multiply(other.toBigDecimal())
 
-    operator fun Number.times(other: Number): BigDecimal {
-        return this.toBigDecimal().multiply(other.toBigDecimal())
-    }
+    operator fun Number.div(other: Number): BigDecimal =
+        this.toBigDecimal().divide(other.toBigDecimal(), scale, roundingMode)
 
-    operator fun Number.div(other: Number): BigDecimal {
-        return this.toBigDecimal().divide(other.toBigDecimal(), scale, roundingMode)
-    }
-
-    operator fun Number.rem(other: Number): BigDecimal {
-        return this.toBigDecimal().remainder(other.toBigDecimal())
-    }
+    operator fun Number.rem(other: Number): BigDecimal =
+        this.toBigDecimal().remainder(other.toBigDecimal())
 
 }
 
