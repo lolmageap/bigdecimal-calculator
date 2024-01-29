@@ -1,11 +1,5 @@
 package com.example.bigdecimalcalculator
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+fun main() {
 
-@SpringBootApplication
-class BigdecimalCalculatorApplication
-
-fun main(args: Array<String>) {
-    runApplication<BigdecimalCalculatorApplication>(*args)
 }
